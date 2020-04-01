@@ -30,9 +30,9 @@ Route::group(['prefix' => 'species'], function(){
     Route::post('update/{specie}', 'SpecieController@update')->name('specie.update');
     Route::post('delete/{specie}', 'SpecieController@destroy')->name('specie.destroy');
     Route::get('show/{specie}', 'SpecieController@show')->name('specie.show');
- });
+});
 
- //MANAGERS
+//MANAGERS
 Route::group(['prefix' => 'managers'], function(){
     Route::get('', 'ManagerController@index')->name('manager.index');
     Route::get('create', 'ManagerController@create')->name('manager.create');
@@ -41,6 +41,7 @@ Route::group(['prefix' => 'managers'], function(){
     Route::post('update/{manager}', 'ManagerController@update')->name('manager.update');
     Route::post('delete/{manager}', 'ManagerController@destroy')->name('manager.destroy');
     Route::get('show/{manager}', 'ManagerController@show')->name('manager.show');
+    Route::get('pdf/{manager}', 'ManagerController@pdf')->name('manager.pdf');
  });
  
  //ANIMALS

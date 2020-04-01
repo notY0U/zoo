@@ -7,6 +7,7 @@ use App\Animal;
 use App\Specie;
 use App\Manager;
 use Illuminate\Http\Request;
+use PDF;
 
 class ManagerController extends Controller
 {
@@ -124,5 +125,11 @@ class ManagerController extends Controller
         
         $manager->delete();
        return redirect()->route('manager.index')->with('success_message','Removal successful');
+    }
+
+    public function pdf(Manager $manager)
+    {
+        $pdf = PDF::loadView('manager.pdf', ['manager' => $manager]);
+        return $pdf->download('autoriaus.pdf');
     }
 }
