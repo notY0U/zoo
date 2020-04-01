@@ -16,7 +16,7 @@
                            <small class="form-text text-muted">Species name</small>
                          </div>
                     @csrf
-                    <button type="submit">ADD</button>
+                    <button type="submit" style="diplay:block; width:100%;">ADD</button>
                  </form>
                </div>
            </div>

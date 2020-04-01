@@ -30,7 +30,7 @@
                         @endforeach
                 </select>
                 <small class="form-text text-muted">Select species</small>
-                <br><button type="submit">UPDATE</button>
+                <br><button type="submit" style="diplay:block; width:100%;">UPDATE</button>
                       </div>
                     @csrf
                 </form>

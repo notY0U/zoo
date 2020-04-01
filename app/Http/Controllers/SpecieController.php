@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Specie;
 use Illuminate\Http\Request;
+use Validator;
 
 class SpecieController extends Controller
 {
@@ -39,6 +40,11 @@ class SpecieController extends Controller
         $validator = Validator::make($request->all(),
         [
             'specie_name' => ['required', 'min:3', 'max:64'],
+        ],
+        [
+            'specie_name.required'=> 'Species field cannot be empty',
+            'specie_name.min'=> 'Species too short',
+            'specie_name.max'=> 'Species too long'
         ]
         );
         if ($validator->fails()) {

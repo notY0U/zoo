@@ -41,6 +41,7 @@ Route::group(['prefix' => 'managers'], function(){
     Route::post('update/{manager}', 'ManagerController@update')->name('manager.update');
     Route::post('delete/{manager}', 'ManagerController@destroy')->name('manager.destroy');
     Route::get('show/{manager}', 'ManagerController@show')->name('manager.show');
+    Route::get('pdf/{manager}', 'ManagerController@pdf')->name('manager.pdf');
  });
  
  //ANIMALS

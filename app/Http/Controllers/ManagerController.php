@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Validator;
+use PDF;
 use App\Animal;
 use App\Specie;
 use App\Manager;
@@ -44,6 +45,14 @@ class ManagerController extends Controller
        [
            'manager_name' => ['required', 'min:3', 'max:64'],
            'manager_surname' => ['required', 'min:3', 'max:64'],
+       ],
+       [
+           'manager_name.require' => 'Name field cannot be empty',
+           'manager_surname.require'  => 'Surname field cannot be empty',
+           'manager_name.min' => 'Name too short',
+           'manager_surname.min' => 'Surname too short',
+           'manager_name.max' => 'Name too long',
+           'manager_surname.max' => 'Surname too long'
        ]
        );
        if ($validator->fails()) {
@@ -125,4 +134,12 @@ class ManagerController extends Controller
         $manager->delete();
        return redirect()->route('manager.index')->with('success_message','Removal successful');
     }
+    public function pdf(Manager $manager){
+        // $manager=Manager::find(request()->manager_id);
+        // $data = Manager::get();
+        $pdf = PDF::loadView('manager.pdf', ['manager'=> $manager]);
+    // dd($pdf);        
+        return $pdf->download('manager.pdf');
+    }
 }
+// $manager->name.'-'.$manager->surname.

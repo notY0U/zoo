@@ -15,7 +15,7 @@
                    Manager: {{ $animal->animalMan->name}}</a>
                 <form method="POST" action="{{route('animal.destroy', [$animal])}}">
                  @csrf
-                 <button type="submit">DELETE</button>
+                 <button type="submit" style="diplay:block; width:100%;">DELETE</button>
                 </form>
                 <br>
               @endforeach

@@ -31,7 +31,7 @@
                  </select>
                  <small class="form-text text-muted">Select species</small>
                  <br>
-                 <button type="submit">ADD</button>
+                 <button type="submit" style="diplay:block; width:100%;">ADD</button>
                       </div>
                     @csrf
                  </form>

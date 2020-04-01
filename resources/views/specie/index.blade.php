@@ -13,7 +13,7 @@
                 <a href="{{route('specie.edit',[$specie])}}">{{$specie->name}} </a>
                 <form method="POST" action="{{route('specie.destroy', [$specie])}}">
                     @csrf
-                    <button type="submit">DELETE</button>
+                    <button type="submit"style="diplay:block; width:100%;">DELETE</button>
                    </form>
                    <br>
               @endforeach
